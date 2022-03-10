@@ -1,0 +1,167 @@
+
+.fondo{
+    background-image: url("../img/cuarto.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* *{
+    font-family: 'Marcellus', serif;
+} */
+
+.doble{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.input-group{
+    margin-left: auto;
+    margin-right: auto;
+    width: 0%;
+    
+}
+.form-registrar{
+    width: 800px;
+    background-color: rgba(0, 0, 0, 0.445);
+    padding: 5%;
+    margin: 15%;
+    margin-top: 7%;
+    border-radius: 18px;
+    color: rgb(255, 255, 255);
+    box-shadow: 7px 13px 37px #000;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+.form-registrar h4{
+    font-size: 30px;
+    margin-bottom: 20px;
+    
+    
+}
+
+.controls::placeholder{
+    color: rgb(255, 255, 255);
+}
+.controls{
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.103) ;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    border: 1px solid rgb(0, 0, 0); 
+
+}
+.form-registrar p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+.form-registrar a{
+    color: #f88d01;
+}
+.form-registrar a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+
+.boton{
+    margin-top: 20px;
+    width: 20%;
+    background-color: #ed8600c0;
+    border-radius: 18px;
+    padding: 12px;
+    color: white;
+    font-size: 16px;
+    transition: all ease 0.5s;
+    cursor: pointer;
+
+}
+	
+.boton:hover{
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+	background:#000000
+}
+
+.controlsOp{
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.103) ;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    border: 1px solid rgb(0, 0, 0); 
+}
+
+.optionText{
+    color: white;
+    font-size: 90%;
+    background-color: rgb(27, 26, 26);
+    
+}
+
+@media screen and (max-width: 850px) {
+    .form-registrar{
+       width: 100%;
+       margin-top: 15%;
+       
+    }
+   
+    .boton{
+        font-size: 12px;
+        
+        
+    }
+
+}
+@media screen and (max-width: 400px) {
+    .boton{
+        
+        font-size: 11px;
+        margin-top: 15px;
+    }
+    .form-registrar{
+        margin-top: 17%;
+        font-size: 11px;
+        
+    }
+    .input-group{
+        margin-left: 2px;
+    }
+
+    .form-registrar p{
+        height: 40px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .form-registrar h4{
+        font-size: 20px;
+        margin-bottom: 20px;
+        
+        
+    }
+    
+}
+
+
+
+
+
+/* quitar las flechas de tipo number ↓ */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
+
+#box{
+    background-color: #f88d01;
+}
+
