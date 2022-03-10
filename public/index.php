@@ -18,6 +18,7 @@ $router->get('/gastronomia', [GastronomiaController::class, 'index']);
 $router->get('/hoteles', [HotelController::class, 'index']);
 $router->get('/autos', [AutosController::class, 'index']);
 $router->get('/', [InicioController::class, 'index']);
+$router->get('/admin/autos', [AutosController::class, 'adminAutos']);
 
 // Llamamos el metodo de comprobar rutas
 $router->comprobarRutas();

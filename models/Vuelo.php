@@ -19,12 +19,21 @@ class Vuelo extends Database {
 
     public static function getVuelos(){
         $sql = "SELECT vuelos.id, fecha_salida, fecha_regreso, ciudades.ciudad as origen, c.ciudad as destino, precio, duracion FROM " . static::$tabla . " INNER JOIN ciudades ON ciudades.id = vuelos.ciudad_origen_id INNER JOIN ciudades as c ON c.id = vuelos.ciudad_destino_id;";
-        $resultado = mysqli_query(self::$db, $sql);
-        $vuelos = [];
+        // $resultado = mysqli_query(self::$db, $sql);
+        // $resultado = self::$db->query($sql);
 
-        while ($vuelo = mysqli_fetch_assoc($resultado)) {
-            $vuelos[] = $vuelo;
-        }
+        // consulta con pdo
+        $resultado = self::$db->prepare($sql);
+        $resultado->execute();
+        $vuelos = $resultado->fetchAll(PDO::FETCH_ASSOC);
+        // $vuelos = [];
+
+        // var_dump($resultados);
+        // exit;
+
+        // while ($vuelo = $resultados) {
+        //     $vuelos[] = $vuelo;
+        // }
 
         return $vuelos;
     }

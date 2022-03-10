@@ -7,7 +7,7 @@ class VuelosController {
 
     public static function index(Router $router) {
         $vuelos = Vuelo::getVuelos();
-        $router->render('admin/vuelos', [
+        $router->render('vuelos/adminVuelos', [
             'vuelos' => $vuelos
         ]);
     }
@@ -17,7 +17,8 @@ class VuelosController {
         $vuelos = Vuelo::getVuelos();
 
         $router->render('vuelos/RuizJonathan', [
-            'vuelos' => $vuelos
+            'vuelos' => $vuelos,
+            
         ]);
     }
 
