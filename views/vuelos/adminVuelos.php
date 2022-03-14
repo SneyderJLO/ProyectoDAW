@@ -4,7 +4,7 @@
     <!-- <img class="mx-auto rounded-lg" src="https://cdn.pixabay.com/photo/2017/06/05/11/01/airport-2373727_960_720.jpg" alt="vuelos"> -->
 
     <div class="w-4/5 flex justify-center mx-auto md:justify-start my-5">
-        <a href="crearVuelo.php" class="block w-fit p-2 border-emerald-600 border-solid border-2 text-emerald-700 hover:text-white hover:bg-emerald-600 rounded-lg hover:font-bold font-semibold">Crear un Nuevo Vuelo</a>
+        <a href="/admin/crearVuelo" class="block w-fit p-2 border-emerald-600 border-solid border-2 text-emerald-700 hover:text-white hover:bg-emerald-600 rounded-lg hover:font-bold font-semibold">Crear un Nuevo Vuelo</a>
     </div>
 
     <div class="md:grid-cols-2 md:w-4/5 mx-auto grid grid-cols-1 lg:grid-cols-3 text-center gap-5 my-10">
@@ -28,9 +28,9 @@
                 </div>
 
                 <div class="flex gap-5 justify-evenly w-full">
-                    <a href="actualizar.php?id=<?php echo $vuelo['id']; ?>" class="text-indigo-500 font-medium rounded-md border-2 border-indigo-400 brder-solid px-4 py-2 block w hover:bg-indigo-500 hover:text-white transition-colors hover:cursor-pointer" type="button">Editar</a>
+                    <a href="/admin/actualizarVuelo?id=<?php echo $vuelo['id']; ?>" class="text-indigo-500 font-medium rounded-md border-2 border-indigo-400 brder-solid px-4 py-2 block w hover:bg-indigo-500 hover:text-white transition-colors hover:cursor-pointer" type="button">Editar</a>
 
-                    <form action="eliminar.php" method="POST">
+                    <form action="/admin/eliminarVuelo" method="POST">
                         <input type="hidden" name="id" value="<?php echo $vuelo['id'] ?>">
 
                         <button type="submit" class="text-rose-500 font-medium rounded-md border-2 border-rose-400 brder-solid px-4 py-2 block hover:bg-rose-500 hover:text-white transition-colors" type="button">Eliminar</button>
