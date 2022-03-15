@@ -17,7 +17,6 @@ class Router {
 
     // comprueba si la ruta existe en el array de rutas y ejecuta el metodo asociado
     public function comprobarRutas() {
-
         $urlActual = $_SERVER['PATH_INFO'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
 

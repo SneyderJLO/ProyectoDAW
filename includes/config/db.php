@@ -13,13 +13,13 @@
 
 
 function conectarDB(){
-    $database_username = 'root';
-    $database_password = '';
-    $dbname="hoteles";
+    $database_username = 'user';
+    $database_password = 'pass';
+    $dbname="db-name";
     $dsn = 'mysql:host=localhost;dbname=' . $dbname;
     $conexion = null; 
     try{
-        $conexion = new PDO($dsn, $database_username, $database_password ); 
+        $conexion = new PDO( $dsn, $database_username, $database_password ); 
     }catch(Exception $e){
             echo $e;
             die("error " . $e->getMessage());

@@ -36,7 +36,7 @@
             </div>
 
             <div class="flex justify-center md:justify-start">
-                <a href="/adminVuelos" class="block w-fit p-2 border-amber-600 border-solid border-2 text-amber-700 hover:text-white hover:bg-amber-600 rounded-lg">Administrar Vuelos (Solo Administradores)</a>
+                <a href="/admin/vuelos" class="block w-fit p-2 border-amber-600 border-solid border-2 text-amber-700 hover:text-white hover:bg-amber-600 rounded-lg">Administrar Vuelos (Solo Administradores)</a>
             </div>
         </div>
     </section>

@@ -13,12 +13,19 @@ $router = new Router;
 
 // Guardamos las rutas que se mostraran en el navegador
 $router->get('/vuelos', [VuelosController::class, 'verVuelos']);
-$router->get('/adminVuelos', [VuelosController::class, 'index']);
 $router->get('/gastronomia', [GastronomiaController::class, 'index']);
 $router->get('/TenemeaNeysserformulario', [GastronomiaController::class, 'formAdmin']);
 $router->get('/hoteles', [HotelController::class, 'index']);
 $router->get('/autos', [AutosController::class, 'index']);
 $router->get('/', [InicioController::class, 'index']);
+
+// Administrador
+$router->get('/admin/vuelos', [VuelosController::class, 'index']);
+$router->get('/admin/crearVuelo', [VuelosController::class, 'crearVuelo']);
+$router->post('/admin/crearVuelo', [VuelosController::class, 'crearVuelo']);
+$router->post('/admin/eliminarVuelo', [VuelosController::class, 'eliminarVuelo']);
+$router->get('/admin/actualizarVuelo', [VuelosController::class, 'actualizarVuelo']);
+$router->post('/admin/actualizarVuelo', [VuelosController::class, 'actualizarVuelo']);
 $router->get('/admin/autos', [AutosController::class, 'adminAutos']);
 
 // Llamamos el metodo de comprobar rutas
