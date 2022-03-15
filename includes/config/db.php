@@ -14,7 +14,7 @@
 
 function conectarDB(){
     $database_username = 'user';
-    $database_password = 'pass';
+   $database_password = 'pass';
     $dbname="db-name";
     $dsn = 'mysql:host=localhost;dbname=' . $dbname;
     $conexion = null; 
