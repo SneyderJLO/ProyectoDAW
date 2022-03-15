@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página 2 -Formulario</title>
     <!-- Hoja de estilo interna  -->
+    <script src="https://kit.fontawesome.com/5ad6b79db6.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="styles/Tenemea-Css-Formulario.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
@@ -16,23 +18,74 @@
 </head>
 
 <body>
-    <header class="bg-black p-2">
-        <div class="container flex items-center flex-col sm:flex-row justify-between mx-auto text-white">
-            <a href="index.html" class="flex items-center">
-                <h1 class="my-2 text-4xl sm:ml-0 sm:text-title sm:leading-none ">EcuTravel</h1>
-                <i class="fas fa-plane-departure text-2xl sm:text-logo ml-2"></i>
-            </a>
+  
+  
+<div id="formGeneral">
+        <!---->
 
-            <i id="bar" class="block text-3xl sm:hidden fas fa-bars"></i>
+        
+        <div class="containerFormulario" style="margin-left:25%; text-align:center; ">
+        <table id="miTabla">
+		<thead>
+			<tr>
+				<th>Pedido</th>
+				<th>Cantidad</th>
+				<th>Nombres</th>
+				<th>Dirección</th>
+				<th>Correo</th>
+				<th>Teléfono</th>
+                <th>Detalles</th>
+                <th></th>
 
-            <nav id="nav" class="opacity-0 h-0 invisible sm:visible sm:h-auto sm:opacity-100 sm:flex gap-2 flex-col text-center sm:flex-row sm:justify-between sm:gap-4 sm:text-2sm transition-all duration-300 ease-in-out">
-                <a class="hover:text-orange-500 text-lg sm:text-base" href="RuizJonathan.html">Vuelos</a>
-                <a class="hover:text-orange-500 text-lg sm:text-base" href="DavilaJose.html">Hoteles</a>
-                <a class="hover:text-orange-500 text-lg sm:text-base" href="RonquilloVanessa.html">Reserva de Autos</a>
-                <a class="hover:text-orange-500 text-lg sm:text-base" href="TenemeaNeysser.html">Gastronomia</a>
-            </nav>
+			</tr>
+		</thead>
+		<tbody>
+
+            <?php 
+            foreach ($gastronomia as $lista):
+                $opciones = $lista['opciones'];
+                $cantidad = $lista['cantidad'];
+                $nombres = $lista['nombres'];
+                $direccion = $lista['direccion'];
+                $correo = $lista['correo'];
+                $telefono = $lista['telefono'];
+                $detalles = $lista['detalles'];
+
+        ?>
+
+                <tr>
+                <td><?php echo $opciones?></td>
+               <td><?php echo $cantidad?></td>
+               <td><?php echo $nombres?></td>
+               <td><?php echo $direccion?></td>
+               <td><?php echo $correo?></td>
+               <td><?php echo $telefono?></td>
+               <td><?php echo $detalles?></td>
+                    <td>
+                    <a href="
+                    index.php?c=gastronomia&f=registrar
+                   ">
+                    <i class="fa-solid fa-pen"></i>
+                        </a>
+
+                    <a href="delete.php?id=<?php echo $row['id'] ?>">
+                    <i class="fa-solid fa-circle-minus"></i>
+                        </a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+		
+			
+		</tbody>
+	</table>
+    <br>
+
+  
+<div  style="clear:both;">
+<a href="#formularioAgregar">
+    <button class="mibutton">Crear nuevo pedido</button>
+        </a> </div>
         </div>
-    </header>
     <div id="formGeneral">
         <!---->
         <div class="containerFormulario">
@@ -133,7 +186,9 @@
                         condiciones
                     </a> para el pedido.</label><span class="req">* </span>
                 </p>
-                <button class="mibutton">Cotizar pedido</button>
+            <a href="index.php?c=gastronomia&f=registrar">
+                <button class="mibutton">Registrar pedido</button>
+             </a>
                 <div style="clear: both;"></div>
             </form>
         </div>
@@ -141,15 +196,7 @@
             <br><br><br>
         </div>
     </div>
-    <!-- Footer -->
-    <footer class="bg-black">
-        <div class="container mx-auto flex items-center justify-center flex-col p-2">
-            <a href="/" class="text-white">
-                <i class="text-3xl fas fa-plane-departure"></i>
-            </a>
-            <p class="text-white text-sm">Todos los Derechos Reservados EcuTravel &copy;</p>
-        </div>
-    </footer>
+   
     <script src="./bundle.js"></script>
     <script src="js/Pagina2-Tenemea.js"></script>
 

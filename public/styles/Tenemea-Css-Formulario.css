@@ -160,12 +160,12 @@ p.subTextoTitulo {
     padding-bottom: 1%;
 }
 
-.form:hover {
+.formu:hover {
     color: #ed8600;
     transition: color .3s ease;
 }
 
-.form {
+.formu {
     text-align: center;
     border-style: solid;
     font-style: italic;

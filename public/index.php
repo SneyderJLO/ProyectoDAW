@@ -15,6 +15,7 @@ $router = new Router;
 $router->get('/vuelos', [VuelosController::class, 'verVuelos']);
 $router->get('/adminVuelos', [VuelosController::class, 'index']);
 $router->get('/gastronomia', [GastronomiaController::class, 'index']);
+$router->get('/TenemeaNeysserformulario', [GastronomiaController::class, 'formAdmin']);
 $router->get('/hoteles', [HotelController::class, 'index']);
 $router->get('/autos', [AutosController::class, 'index']);
 $router->get('/', [InicioController::class, 'index']);

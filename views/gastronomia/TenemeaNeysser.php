@@ -747,8 +747,8 @@
 </div>
 <div style="clear:both"><br></div><br>
 
-<p class="form">
-    <a href="TenemeaNeysserformulario.html">
+<p class="formu">
+    <a href="TenemeaNeysserformulario">
         ¿Necesitas cotizar un evento gastronómico? &nbsp; ¡Comunícanos!
     </a>
 
