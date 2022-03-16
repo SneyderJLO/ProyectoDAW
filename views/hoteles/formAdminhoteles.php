@@ -118,9 +118,14 @@ tbody{
                         <i class="fa-solid fa-pen-to-square"></i>
                         </a>
 
-                        <a href= <?php $delete?>>
+                        <!-- <a href='eliminarHotel?id=<?php echo $resultado['Id'] ?>'>
                         <i class="fa-solid fa-trash"></i>
-                        </a>
+                        </a> -->
+
+                        <form action="/eliminarHotel" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $hotel['Id'] ?>">
+                        <button type="submit" class="fa-solid fa-trash" type="button"></button>
+                    </form>
               </td>
            </tr>
            <?php endforeach; ?>
@@ -137,7 +142,7 @@ tbody{
     </div>
 
 
-<form id="formulario" class="form-registrar" action='savedata.php' method ='POST' >
+<form id="formulario" class="form-registrar" method ='POST' >
         <h4>Nuevo Hotel</h4>
         <div class="doble">
             <input required="" autocomplete="off" class="controls" type="text" id="nombres" name='nombre' placeholder="Nombre de hotel">

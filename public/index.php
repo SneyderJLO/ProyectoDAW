@@ -16,7 +16,9 @@ $router->get('/vuelos', [VuelosController::class, 'verVuelos']);
 $router->get('/gastronomia', [GastronomiaController::class, 'index']);
 $router->get('/hoteles', [HotelController::class, 'index']);
 $router->get('/formularioDavila', [HotelController::class, 'verform']);
-$router->get('/formAdminhoteles',[HotelController::class, 'formadmin']);
+$router->get('/formAdminhoteles',[HotelController::class, 'formadmin'], [HotelController::class, 'crearHotel']);
+$router->post('/formAdminhoteles', [HotelController::class, 'crearHotel']);
+$router->post('/eliminarHotel', [HotelController::class, 'eliminarHotel']);
 $router->get('/autos', [AutosController::class, 'index']);
 $router->get('/', [InicioController::class, 'index']);
 

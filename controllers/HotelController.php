@@ -17,10 +17,48 @@ class HotelController {
     }
     public static function formadmin(Router $router){
         $hoteles = Hotel::getHoteles();
-        // $delete = Hotel::deletehotel();
-        $resultado = Hotel::insertarhoteles();
+
+
         $router->render('hoteles/formAdminhoteles',['estilos' => '<link rel="stylesheet" href="styles/estilos.css" />',
-        'hoteles' => $hoteles,'resultado'=>$resultado]);
+        'hoteles' => $hoteles]);
     }
+
+    public static function eliminarHotel(Router $router){
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $id = $_POST['id'];
+            $hotel = new Hotel(['id' => $id]);
+            $resultado = $hotel->delete($id);
+            if($resultado) {
+                header('Location: formAdminhoteles');
+            }else{
+                echo 'Error al Eliminar';
+            }
+        }
+    }
+
+    public static function crearHotel(Router $router) {
+
+        // $ciudades = new Ciudad;
+        // $ciudades = $ciudades->getAll();
+        $hoteles = new Hotel;
+        $hoteles = $hoteles->getAll();
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $hotelobj = new Hotel($_POST);
+
+            // Validar los datos
+         
+        
+            $hotelobj->insert();
+            header('Location: formAdminhoteles');
+            
+        }
+
+        $router->render('formAdminhoteles', [
+            
+            'hoteles' => $hoteles
+        ]);
+    }
+  
 }
 

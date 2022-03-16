@@ -33,13 +33,13 @@ class Hotel extends Database{
     //     $resultado->execute();
     //     return $resultado;
     // }
-    
-    public static function insertarhoteles() {
-        
-        $query = "INSERT INTO $this->tabla (Nombrehotel, ProvinciaCiudad, Email, NumeroCuartos, TipoHotel, Estrellas) VALUES ('$this->nombreHotel', '$this->ProvinciaCiudad', '$this->Email', '$this->NumeroCuartos', '$this->TipoHotel', '$this->Estrellas')";
-        // $resultado = mysqli_query($this->db, $sql);
-        $resultado = self::$db->prepare($query);
+    public function insert() {
+        $sql = "INSERT INTO " . static::$tabla . "(Nombrehotel, ProvinciaCiudad, Email, NumeroCuartos, TipoHotel, Estrellas) VALUES ('$this->nombreHotel ', '$this->ProvinciaCiudad ', '$this->Email ', '$this->NumeroCuartos ', '$this->TipoHotel ', '$this->Estrellas ')";
+        $resultado = self::$db->prepare($sql);
         $resultado->execute();
+
         return $resultado;
+
     }
+ 
 }
