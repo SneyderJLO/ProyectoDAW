@@ -3,6 +3,8 @@ require __DIR__ . '/../models/Gastronomia.php';
 
 class GastronomiaController extends Gastronomia{
 
+
+
     public static function index(Router $router) {
 
         $gastronomia = Gastronomia::getGastronomia();
@@ -21,18 +23,53 @@ class GastronomiaController extends Gastronomia{
         ]);
     }
 
-    function registrar(){
-		$data = array(
-					'opciones' 		=> $_REQUEST['opciones'],
-					'cantidad' => $_REQUEST['cantidad'],
-					'nombres'		=> $_REQUEST['nombres'],
-					'direccion'		=> $_REQUEST['direccion'],
-					'correo'		=> $_REQUEST['correo'],
-					'telefono'		=> $_REQUEST['telefono'],
-					'detalles'		=> $_REQUEST['detalles'],
-					);		
-					parent::set_RegistrarPedido($data);		
-    }    
     
-    
+    public static function crearPedido(Router $router) {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $ObjectPedido = new Gastronomia($_POST);
+
+            
+        
+                $ObjectPedido->insert();
+                header('Location: /TenemeaNeysserformulario');
+            
+        }
+
+        $router->render('gastronomia/TenemeaNeysserformulario', [
+        ]);
+    }
+
+    public static function eliminarPedido(Router $router){
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $id = $_POST['id'];
+            $pedido = new Gastronomia(['id' => $id]);
+            $resultado = $pedido->delete($id);
+            if($resultado) {
+                header('Location: TenemeaNeysserformulario');
+            }else{
+                echo 'Error al Eliminar';
+            }
+        }
+    }
+
+    public static function actualizarPedido(Router $router){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $ObjectPedido = new Gastronomia($_POST);
+                $ObjectPedido->update($_GET['id']);
+                header('Location: TenemeaNeysserformulario');
+            
+        }
+        $id = filter_var( $_GET['id'], FILTER_VALIDATE_INT );
+
+        $ObjectPedido = new Gastronomia(['id' => $id]);
+        $lista = $ObjectPedido->getOne();
+
+
+        
+        $router->render('gastronomia/actualizarPedido', [
+            'lista' => $lista
+        ]);
+    }
+
+   
 }
