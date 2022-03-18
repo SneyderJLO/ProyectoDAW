@@ -6,7 +6,7 @@ class Hotel extends Database{
     public static $tabla = 'hoteles';
     public static $columnasDb = ['Id','NombreHotel', 'Email', 'NumeroCuartos', 'TipoHotel', 'Estrellas'];
     function __construct($args = []){
-        $this->id =$args['Id']??null;
+        $this->id =$args['id']??null;
         $this->nombreHotel = $args['Nombrehotel']??null;
         $this->ProvinciaCiudad = $args['ProvinciaCiudad']??null;
         $this->Email = $args['Email']??null;

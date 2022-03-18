@@ -10,16 +10,16 @@
 <form  method ="POST" class="form-registrar">
         <h4>Nuevo Hotel</h4>
         <div class="doble">
-            <input required="" autocomplete="off" class="controls" type="text"  name="Nombrehotel" placeholder="Nombre de hotel" value="<?php echo ($lista) ? $lista['Nombrehotel'] : ''; ?>">
+            <input required="" autocomplete="off" class="controls" type="text"  name="Nombrehotel" placeholder="Nombre de hotel" value="<?php echo ($hotel) ? $hotel['Nombrehotel'] : ''; ?>">
             <div class="input-group">-</div>
-            <input required="" autocomplete="off" class="controls" type="text" name="ProvinciaCiudad"  placeholder="Provincia - Ciudad" value="<?php echo ($lista) ? $lista['ProvinciaCiudad'] : ''; ?>">
-            <input required="" autocomplete="off" class="controls" type="email" name="Email"  placeholder="Correo electronico Hotel" value="<?php echo ($lista) ? $lista['Email'] : ''; ?>">
+            <input required="" autocomplete="off" class="controls" type="text" name="ProvinciaCiudad"  placeholder="Provincia - Ciudad" value="<?php echo ($hotel) ? $hotel['ProvinciaCiudad'] : ''; ?>">
+            <input required="" autocomplete="off" class="controls" type="email" name="Email"  placeholder="Correo electronico Hotel" value="<?php echo ($hotel) ? $hotel['Email'] : ''; ?>">
             <div class="input-group">-</div>
-            <input required="" autocomplete="off" class="controls" type="number" name="NumeroCuartos"  placeholder="Número de cuartos" value="<?php echo ($lista) ? $lista['NumeroCuartos'] : ''; ?>">
+            <input required="" autocomplete="off" class="controls" type="number" name="NumeroCuartos"  placeholder="Número de cuartos" value="<?php echo ($hotel) ? $hotel['NumeroCuartos'] : ''; ?>">
             <div>
-            <input required="" type="radio" name="TipoHotel" id='playa' value = 'Hotel playero'<?php echo $lista["TipoHotel"]== "Hotel playero"?"checked=\"checked\"":'';?>>
+            <input required="" type="radio" name="TipoHotel" id='playa' value = 'Hotel playero'<?php echo $hotel["TipoHotel"]== "Hotel playero"?"checked=\"checked\"":'';?>>
             <label for="playa">Hotel Playero</label>
-            <input required="" type="radio" name="TipoHotel" id='ciudad' value = 'Hotel de ciudad'<?php echo $lista["TipoHotel"] == "Hotel de ciudad"?"checked=\"checked\"":'';?> >
+            <input required="" type="radio" name="TipoHotel" id='ciudad' value = 'Hotel de ciudad'<?php echo $hotel["TipoHotel"] == "Hotel de ciudad"?"checked=\"checked\"":'';?> >
             <label for="ciudad">Hotel de Ciudad</label>
            
             </div>
@@ -30,27 +30,27 @@
             <option class="optionText" value="">Tipo de Hotel</option>
 			<option class="optionText" value="5 estrellas"
             
-            <?php if($lista['Estrellas'] == "5 estrellas"){
+            <?php if($hotel['Estrellas'] == "5 estrellas"){
                 echo "selected";}
                 
                 ?>
             >5 Estrellas</option>
 			<option class="optionText" value="4 estrellas"
             
-            <?php if($lista['Estrellas'] == "4 estrellas"){
+            <?php if($hotel['Estrellas'] == "4 estrellas"){
                 echo "selected";}
                 
                 ?>
             >4 Estrellas</option>
 			<option class="optionText" value="3 estrellas"
-            <?php if($lista['Estrellas'] == "3 estrellas"){
+            <?php if($hotel['Estrellas'] == "3 estrellas"){
                 echo "selected";}
                 
                 ?>
 
             >3 Estrellas </option>
 			<option class="optionText" value="2 estrellas"
-            <?php if($lista['Estrellas'] == "2 estrellas"){
+            <?php if($hotel['Estrellas'] == "2 estrellas"){
                 echo "selected";}
                 
                 ?>
