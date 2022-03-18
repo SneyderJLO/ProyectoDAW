@@ -114,14 +114,11 @@ tbody{
                <td><?php echo $tipoHotel?></td>
                <td><?php echo $estrellas?></td>
                <td>
-                        <a href="edit.php?id=<?php echo $row['Id'] ?>">
-                        <i class="fa-solid fa-pen-to-square"></i>
+                        <a href="/actualizarHotel?id=<?php echo $hotel['Id'] ?>"
+                        class="fa-solid fa-pen-to-square">
                         </a>
 
-                        <!-- <a href='eliminarHotel?id=<?php echo $resultado['Id'] ?>'>
-                        <i class="fa-solid fa-trash"></i>
-                        </a> -->
-
+                 
                         <form action="/eliminarHotel" method="POST">
                         <input type="hidden" name="id" value="<?php echo $hotel['Id'] ?>">
                         <button type="submit" class="fa-solid fa-trash" type="button"></button>
@@ -142,26 +139,26 @@ tbody{
     </div>
 
 
-<form id="formulario" class="form-registrar" method ='POST' >
+<form  action="/crearHotel" id="formulario" class="form-registrar" method ='POST'>
         <h4>Nuevo Hotel</h4>
         <div class="doble">
-            <input required="" autocomplete="off" class="controls" type="text" id="nombres" name='nombre' placeholder="Nombre de hotel">
+            <input required="" autocomplete="off" class="controls" type="text" id="nombres" name='Nombrehotel' placeholder="Nombre de hotel">
             <div class="input-group">-</div>
-            <input required="" autocomplete="off" class="controls" type="text" name="provincia" id="provincias" placeholder="Provincia - Ciudad">
-            <input  required=""autocomplete="off" class="controls" type="email" name="correo" id="correo" placeholder="Correo electronico Hotel">
+            <input required="" autocomplete="off" class="controls" type="text" name="ProvinciaCiudad" id="provincias" placeholder="Provincia - Ciudad">
+            <input  required=""autocomplete="off" class="controls" type="email" name="Email" id="correo" placeholder="Correo electronico Hotel">
             <div class="input-group">-</div>
-            <input required="" autocomplete="off" class="controls" type="number" name="cuartos" id="celular" placeholder="Número de cuartos">
+            <input required="" autocomplete="off" class="controls" type="number" name="NumeroCuartos" id="celular" placeholder="Número de cuartos">
             <div>
-            <input required="" type="radio" name="tipo" id='playa' value = 'Hotel playero'>
+            <input required="" type="radio" name="TipoHotel" id='playa' value = 'Hotel playero'>
             <label for="playa">Hotel Playero</label>
-            <input required="" type="radio" name="tipo" id='ciudad' value = 'Hotel de ciudad'>
+            <input required="" type="radio" name="TipoHotel" id='ciudad' value = 'Hotel de ciudad'>
             <label for="ciudad">Hotel de Ciudad</label>
            
             </div>
 
             <div class="input-group">-</div>
 
-            <select required="" id="selector" class="controlsOp" name="opciones">
+            <select required="" id="selector" class="controlsOp" name="Estrellas">
             <option class="optionText" value="">Tipo de Hotel</option>
 			<option class="optionText" value="5 estrellas">5 Estrellas</option>
 			<option class="optionText" value="4 estrellas">4 Estrellas</option>

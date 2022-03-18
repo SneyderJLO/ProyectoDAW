@@ -34,12 +34,32 @@ class Hotel extends Database{
     //     return $resultado;
     // }
     public function insert() {
-        $sql = "INSERT INTO " . static::$tabla . "(Nombrehotel, ProvinciaCiudad, Email, NumeroCuartos, TipoHotel, Estrellas) VALUES ('$this->nombreHotel ', '$this->ProvinciaCiudad ', '$this->Email ', '$this->NumeroCuartos ', '$this->TipoHotel ', '$this->Estrellas ')";
+        $sql = "INSERT INTO " . static::$tabla . " (Nombrehotel, ProvinciaCiudad, Email, NumeroCuartos, TipoHotel, Estrellas) VALUES ('$this->nombreHotel', '$this->ProvinciaCiudad', '$this->Email', '$this->NumeroCuartos', '$this->TipoHotel', '$this->Estrellas')";
+    
         $resultado = self::$db->prepare($sql);
         $resultado->execute();
 
         return $resultado;
+    }
 
+    public function update($id) {
+        $sql = "UPDATE " . static::$tabla . " SET Nombrehotel = '$this->nombreHotel', ProvinciaCiudad = '$this->ProvinciaCiudad', Email = '$this->Email', NumeroCuartos = '$this->NumeroCuartos', TipoHotel = '$this->TipoHotel', Estrellas = '$this->Estrellas' WHERE id = $id";
+        
+
+        
+        $resultado = self::$db->prepare($sql);
+        $resultado->execute();
+
+        return $resultado;
+    }
+    public function getOne() {
+        
+        $sql = "SELECT * from hoteles WHERE id = {$this->id};";
+        $resultado = self::$db->prepare($sql);
+        $resultado->execute();
+        $hotel = $resultado->fetch(PDO::FETCH_ASSOC);
+
+        return $hotel;
     }
  
 }

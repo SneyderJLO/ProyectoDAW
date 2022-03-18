@@ -37,28 +37,37 @@ class HotelController {
     }
 
     public static function crearHotel(Router $router) {
-
-        // $ciudades = new Ciudad;
-        // $ciudades = $ciudades->getAll();
-        $hoteles = new Hotel;
-        $hoteles = $hoteles->getAll();
-
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $hotelobj = new Hotel($_POST);
+            $hotel = new Hotel($_POST);
 
-            // Validar los datos
-         
-        
-            $hotelobj->insert();
-            header('Location: formAdminhoteles');
+            
+                $hotel->insert();
+                header('Location: formAdminhoteles');
             
         }
 
-        $router->render('formAdminhoteles', [
-            
-            'hoteles' => $hoteles
+        $router->render('/formAdminhoteles', [
+            'hotel'=>$hotel
         ]);
     }
-  
+    public static function actualizarHotel(Router $router){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $hotelObjet = new Hotel($_POST);
+                $hotelObjet->update($_GET['id']);
+                header('Location: formAdminhoteles');
+            
+        }
+        $id = filter_var( $_GET['id'], FILTER_VALIDATE_INT );
+
+        $hotelObjet = new Hotel(['id' => $id]);
+        $hotel = $hotelObjet->getOne();
+
+
+        
+        $router->render('hoteles/actualizarHotel', [
+            'hotel' => $hotel
+        ]);
+    }
+    
 }
 
