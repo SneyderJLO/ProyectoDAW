@@ -103,5 +103,6 @@
     <br>
 
     <div id="divbutton">
-        <a href="formularioDávila.html" class="butt"> Reserva Ahora</a>
+        <a href="formularioDavila" class="butt"> Reserva Ahora</a>
+        <a href="formAdminhoteles" class="butt"> Administrar Hoteles</a>
     </div>
