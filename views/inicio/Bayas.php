@@ -1,4 +1,7 @@
-
+<link rel="stylesheet" href="styles/PrincipalEstilos.css" />
+    
+    <!-- Hoja de estilo externa  -->
+    <link rel="stylesheet" href="styles/style.css"><br>
     <div class="columna">
         <h2>Tu Agencia de Confianza</h2>
 
@@ -10,8 +13,7 @@
                     console.log("el contenido ha cargado");
                             
                     var imagenes = [];
-
-                            
+       
                     imagenes[0] ="img/tortuga.jpg";
                     imagenes[1] ="img/iguanas.jpg";
                     imagenes[2] ="img/costa1.jpg";
@@ -95,7 +97,7 @@
             <img src="img/amazonia2.jpg" alt="amazonia">
         </div><br>
         <div class="reserva">
-            <a style="font-size: 25px;" href="FormReservaViaje.html" class="btn btn-o"> Reserva tu Viaje</a>
+            <a style="font-size: 25px;" href="AgregarViaje" class="btn btn-o"> Reserva tu Viaje</a>
         </div>
            
     </div><br><br>

@@ -222,11 +222,7 @@ header {
 .formu{
     padding: 1rem 0;
     background-color: #e7e2e2;
-    margin:1%;
-    
-    
-    
-    
+    margin:1%;  
 }
 .formulario h3{
     text-align: center;
@@ -351,6 +347,9 @@ textarea{
     color: white;
  
 }
+.submit button:hover{
+    background-color: black;
+}
 /*Validacion de Formulario*/
 
 .field.falla input{
@@ -372,7 +371,74 @@ textarea{
     color: #ED8600;
 
 }
+.buton{
+    padding: 0.5rem 2rem;
+    font-size: 20px;
+    font-weight: bold;  
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #ED8600;
+    color: white;
+    margin-left: 43%;
+    margin-right: auto;
 
-.submit button:hover{
+}
+.reservas a{
+    border: 1px solid #ED8600  ;
+    border-radius: 5px;
+    margin-left: 20px;
+    font-size: 20px;
+    padding: 3px;
+    background-color: #ED8600 ;
+    color: white;
+    
+}
+.reservas a:hover{
+    background-color: black ;
+    
+}
+.boton{
+    padding: 5px;
+    font-size: 17px;
+    font-weight: bold;  
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ED8600;
+    color: white; 
+
+}
+.boton button{
+    font-weight: bold; 
+}
+.boton:hover{
     background-color: black;
 }
+.buton:hover{
+     background-color: black;
+}
+
+/*tabla*/
+.tabla{
+    margin: 35px auto;
+    width: 100%;
+}
+table {
+    border: #b2b2b2 0.5px solid;
+    margin: 0 auto;
+    text-align: center;  
+}
+td, th {
+    border: #b2b2b2 0.5px solid;
+    height: 15px;
+    padding: 12px;  
+}
+thead{
+    background-color: #ED8600;
+    
+}
+
+
+
+
+
+

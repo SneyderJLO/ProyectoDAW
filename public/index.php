@@ -17,7 +17,9 @@ $router->get('/gastronomia', [GastronomiaController::class, 'index']);
 $router->get('/TenemeaNeysserformulario', [GastronomiaController::class, 'formAdmin']);
 $router->get('/hoteles', [HotelController::class, 'index']);
 $router->get('/autos', [AutosController::class, 'index']);
-$router->get('/', [InicioController::class, 'index']);
+$router->get('/inicio', [InicioController::class, 'index']);
+
+
 
 // Administrador
 $router->get('/admin/vuelos', [VuelosController::class, 'index']);
@@ -36,5 +38,15 @@ $router->post('/crearPedido', [GastronomiaController::class, 'crearPedido']);
 $router->post('/eliminarPedido', [GastronomiaController::class, 'eliminarPedido']);
 $router->get('/actualizarPedido', [GastronomiaController::class, 'actualizarPedido']);
 $router->post('/actualizarPedido', [GastronomiaController::class, 'actualizarPedido']);
+
+$router->get('/inicio', [InicioController::class, 'index']);
+$router->get('/AgregarViaje', [InicioController::class, 'crearReserva']);
+$router->post('/AgregarViaje', [InicioController::class, 'crearReserva']);
+$router->get('/presentarViaje', [InicioController::class, 'verReservas']);
+$router->get('/editarViaje', [InicioController::class, 'actualizarReserva']);
+$router->post('/editarViaje', [InicioController::class, 'actualizarReserva']);
+$router->post('/eliminarReserva', [InicioController::class, 'eliminarReserva']);
+
+
 // Llamamos el metodo de comprobar rutas
 $router->comprobarRutas();
